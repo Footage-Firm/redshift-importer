@@ -1,7 +1,11 @@
 # Amazon Redshift import tool
-This tool will take a CSV file and transform it into a format that Redshift won't choke on, based on string replacements.
+This tool will take a MySQL table exported as a CSV file and import it into Amazon Redshift.
 
-It will then upload it to Amazon S3 and then execute the `COPY` command on Redshift to import the file.
+The process is as following:
+* Convert CSV file by string replacements to ensure that Redshift won't choke on the file during import
+* Upload CSV file to Amazon S3 bucket
+* Create a new Redshift table based on existing MySQL `CREATE TABLE` structure
+* Import CSV file from S3 to the newly created table using the Redshift `COPY` command.
 
 ## Requirements
 * php-pgsql
