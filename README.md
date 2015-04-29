@@ -10,7 +10,7 @@ The process is as following:
 ## Requirements
 * php-pgsql
 
-### Installing on Mac with Homebrew:
+**Installing php-pgsql on Mac with Homebrew:**
 ```bash
 brew reinstall php55 --with-postgresql
 ```
