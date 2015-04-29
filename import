@@ -1,7 +1,13 @@
 #!/usr/bin/env php
 <?php
 require('vendor/autoload.php');
-Dotenv::load(__DIR__);
-Dotenv::required(['AWS_ACCESS_KEY', 'AWS_SECRET_KEY'])
-$import = new RedshiftImporter\Import();
-$import->process($argv);
+
+try {
+	Dotenv::load(__DIR__);
+	Dotenv::required(['AWS_ACCESS_KEY_ID', 'AWS_SECRET_ACCESS_KEY']);
+
+	$import = new RedshiftImporter\RedshiftImporter();
+	$import->process($argv);
+} catch (Exception $e) {
+	echo get_class($e) . ': ' . $e->getMessage();
+}
