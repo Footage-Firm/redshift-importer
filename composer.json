@@ -1,0 +1,19 @@
+{
+    "name": "footage-firm/redshift-importer",
+    "description": "Facilitates importing CSV files to Amazon Redshift in an automated fashion",
+    "authors": [
+        {
+            "name": "Mathias Hansen",
+            "email": "mathias@videoblocks.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "~1.1",
+        "aws/aws-sdk-php": "~2.8"
+    },
+    "autoload": {
+    	"psr-4": {
+    		"RedshiftImporter\\": "RedshiftImporter"
+    	}
+    }
+}
